@@ -19,14 +19,14 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <header className="border-b border-[var(--color-line)] px-6 py-5">
+    <div className="h-screen flex flex-col overflow-hidden">
+      <header className="border-b border-[var(--color-line)] px-6 pt-6 pb-5">
         <div className="max-w-6xl mx-auto flex items-end justify-between flex-wrap gap-4">
           <div>
-            <div className="font-mono text-xs uppercase tracking-[0.2em] text-[var(--color-slate)] mb-1">
+            <div className="font-mono text-xs uppercase tracking-[0.2em] text-[var(--color-slate)] mb-2">
               KYC Onboarding Intelligence — Prototype
             </div>
-            <h1 className="font-display text-4xl">OnboardIQ</h1>
+            <h1 className="font-display text-4xl leading-tight">OnboardIQ</h1>
           </div>
           <div className="flex gap-6 font-mono text-sm">
             <Stat label="Approved" value={counts.auto_approve} color="var(--color-verify)" />
@@ -57,10 +57,10 @@ export default function App() {
         </div>
       </nav>
 
-      <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-6">
+      <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-6 min-h-0 overflow-hidden">
         {tab === "triage" ? (
-          <div className="grid grid-cols-1 md:grid-cols-[320px_1fr] gap-6 h-[calc(100vh-220px)]">
-            <div className="border border-[var(--color-line)] rounded-lg p-3 bg-white/40 h-full">
+          <div className="grid grid-cols-1 md:grid-cols-[320px_1fr] gap-6 h-full min-h-[480px]">
+            <div className="border border-[var(--color-line)] rounded-lg p-3 bg-white/40 h-full overflow-hidden">
               <ApplicantLedger
                 applicants={applicants}
                 selectedId={selectedId}
@@ -69,18 +69,18 @@ export default function App() {
                 onFilterChange={setFilter}
               />
             </div>
-            <div className="border border-[var(--color-line)] rounded-lg p-6 bg-white/40 h-full">
+            <div className="border border-[var(--color-line)] rounded-lg p-6 bg-white/40 h-full overflow-hidden">
               <CaseFile applicant={selected} />
             </div>
           </div>
         ) : (
-          <div className="border border-[var(--color-line)] rounded-lg p-6 bg-white/40">
+          <div className="border border-[var(--color-line)] rounded-lg p-6 bg-white/40 h-full overflow-y-auto">
             <FunnelAnalytics applicants={applicants} />
           </div>
         )}
       </main>
 
-      <footer className="border-t border-[var(--color-line)] px-6 py-4">
+      <footer className="border-t border-[var(--color-line)] px-6 py-3 shrink-0">
         <div className="max-w-6xl mx-auto text-xs text-[var(--color-slate)] font-mono">
           Synthetic data for demonstration. Risk logic models a simplified
           risk-based KYC framework — not affiliated with N26 or any named

@@ -16,6 +16,9 @@
 }
 
 @layer base {
+  html, body, #app {
+    height: 100%;
+  }
   body {
     background-color: var(--color-paper);
     color: var(--color-ink);
