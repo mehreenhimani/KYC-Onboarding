@@ -11,11 +11,11 @@
 
 ### Risk Triage — Case File View
 
-![Risk Triage](src/screenshots/risk-triage.png)
+![Risk Triage](src/Screenshots/Onboarding%20IQ%20-%20Risk%20Triage.png)
 
 ### Funnel Analytics
 
-![Funnel Analytics](src/screenshots/funnel-analytics.png)
+![Funnel Analytics](src/Screenshots/Onboarding%20IQ%20-%20Funnel%20Analytics%20.png)
 
 ---
 
